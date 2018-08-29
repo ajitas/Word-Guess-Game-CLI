@@ -82,7 +82,7 @@ function startGuessing(){
                         console.log(Chalk.black.bgRedBright.bold("==============================="))
                     }
                     else
-                        console.log(Chalk.blue("Guesses left: "+ totalGuesses));
+                        console.log(Chalk.blue("Guesses left: ")+ Chalk.blue.bold(totalGuesses));
                 }
                 if(wordToGuess.getWord().indexOf("_") !== -1)
                     startGuessing();
