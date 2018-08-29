@@ -1,5 +1,6 @@
 var Word = require("./Word");
 var inquirer = require("inquirer");
+var Chalk = require("chalk");
 
 var cities;
 var totalGuesses;
@@ -60,37 +61,37 @@ function startGuessing(){
             name:"guessedLetter",
             type:"input",
             validate: function(value) {
-                if(value.toLowerCase()!== value.toUpperCase() && value.length === 1) {
+                if(value.toLowerCase()!== value.toUpperCase() && value.length === 1 && alreadyGuessedLetters.indexOf(value) === -1) {
                 return true;
                 }
                 return false;
             }
         }]).then(function(response){
-            if(alreadyGuessedLetters.indexOf(response.guessedLetter) === -1){
-                alreadyGuessedLetters.push(response.guessedLetter);
+            if(alreadyGuessedLetters.indexOf(response.guessedLetter.toLowerCase()) === -1){
+                alreadyGuessedLetters.push(response.guessedLetter.toLowerCase());
                 var beforeGuessWord = wordToGuess.getWord();
-                wordToGuess.guessWord(response.guessedLetter);
+                wordToGuess.guessWord(response.guessedLetter.toLowerCase());
                 console.log(wordToGuess.getWord());
                 var afterGuessWord = wordToGuess.getWord();
                 if(beforeGuessWord === afterGuessWord){
-                    console.log("Incorrect guess");
+                    console.log(Chalk.red("Incorrect guess"));
                     totalGuesses--;
                     if(totalGuesses === 0){
-                        console.log("No more chances left to guess!!")
+                        console.log(Chalk.black.bgRedBright.bold("==============================="))
+                        console.log(Chalk.black.bgRedBright.bold("No more chances left to guess!!"));
+                        console.log(Chalk.black.bgRedBright.bold("==============================="))
                     }
                     else
-                        console.log("Guesses left: "+ totalGuesses);
+                        console.log(Chalk.blue("Guesses left: "+ totalGuesses));
                 }
                 if(wordToGuess.getWord().indexOf("_") !== -1)
                     startGuessing();
                 else{
-                    console.log("You guessed the word right!!");
+                    console.log(Chalk.black.bgGreenBright.bold("============================"))
+                    console.log(Chalk.black.bgGreenBright.bold("You guessed the word right!!"));
+                    console.log(Chalk.black.bgGreenBright.bold("============================"))
                     askPlayAgain();
                 }
-            }
-            else{
-                console.log("You have already guessed that letter!!")
-                    startGuessing();
             }
         });
     }
