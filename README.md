@@ -9,7 +9,7 @@ This application is a node version of hangman game wherein user guesses letters 
 ![Word-Guess-Game-CLI-incorrect](hangman-incorrect.gif)
 
 ## Technologies used
-Node.js
+1. Node.js
     * Constructors
     * Inquirer
 
