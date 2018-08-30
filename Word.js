@@ -13,7 +13,7 @@ var Word = function(strWord){
     this.getWord = function(){
         var strWord = "";
         for(var i =0;i<this.letters.length;i++){
-            strWord+=this.letters[i].toString();
+            strWord+=this.letters[i].getLetter();
         }
         return strWord;
     };
@@ -21,6 +21,13 @@ var Word = function(strWord){
         for(var i =0;i<this.letters.length;i++)
             this.letters[i].guessLetter(char);
     };
+    this.displayWord = function(){
+        var strWord = "";
+        for(var i =0;i<this.letters.length;i++){
+            strWord+=this.letters[i].displayLetter();
+        }
+        return strWord;
+    }
 };
 
 module.exports = Word;
