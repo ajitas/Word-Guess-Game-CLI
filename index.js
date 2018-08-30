@@ -229,7 +229,7 @@ function startGuessing(){
             type:"input",
             validate: function(value) {
                 //it has to be an alphabet which is not already guessed
-                if(value.toLowerCase()!== value.toUpperCase() && value.length === 1 && alreadyGuessedLetters.indexOf(value) === -1) {
+                if(value.toLowerCase()!== value.toUpperCase() && value.length === 1 && alreadyGuessedLetters.indexOf(value.toLowerCase()) === -1) {
                     return true;
                 }
                 return false;
