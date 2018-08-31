@@ -1,7 +1,7 @@
 # Word-Guess-Game-CLI
 
 ## About
-This application is a node version of hangman game wherein user guesses letters underneath a hidden word. In this application, the words used are names of cities and countries. Goal is to guess the hidden word correctly. It also keeps a track of score, already guessed letters and number of incorrect guesses left.
+This application is a node version of hangman game wherein user guesses letters underneath a hidden word. In this application, the words used are names of cities and countries. Both category and the word are chosen randomly. Goal is to guess the hidden word correctly. It also keeps a track of score, already guessed letters and number of incorrect guesses left.
 
 ## Application Preview
 ![Word-Guess-Game-CLI-correct](hangman-correct.gif)
@@ -17,7 +17,6 @@ This application is a node version of hangman game wherein user guesses letters 
 On terminal, user is prompted to type in a letter that he wants to guess. That's all is required from the user.
 
 ## Node Packages used
-
 1. inquirer
     * usage
     ```require("inquirer")```
