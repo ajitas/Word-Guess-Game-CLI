@@ -42,8 +42,7 @@ The application will keep running as long as 'y' is pressed as the response to t
 ## Execution steps
 1. Make sure node is installed on your machine. You can visit the website [Node Installation](http://blog.teamtreehouse.com/install-node-js-npm-mac) for instructions.
 2. Download/Clone the respository.
-3. Inside the folder Word-Guess-Game-CLI on terminal, type "npm install". This will take all dependencies from package.json and install all the required packages to run the application.
-5. Once the packages are installed, in the same folder, type "node index.js" on terminal. This will start application execution.
+3. Inside the folder Word-Guess-Game-CLI on terminal, type "node index.js" on terminal. This will start application execution.
 
 ## Code snippets
 ```
